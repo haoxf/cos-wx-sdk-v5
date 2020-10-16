@@ -67,7 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "D:\\code\\cos-wx-sdk-v5\\demo\\lib";
+/******/ 	__webpack_require__.p = "/Users/haoxf/Documents/HBuilderProjects/cos-wx-sdk-v5/demo/lib";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 6);
@@ -616,7 +616,7 @@ var compareVersion = function (v1, v2) {
 
 var canFileSlice = (function () {
     var systemInfo = wx.getSystemInfoSync();
-    var support = compareVersion(systemInfo.SDKVersion, '2.10.0') >= 0;
+    var support = compareVersion(systemInfo.SDKVersion || '2.10.0', '2.10.0') >= 0;
     var needWarning = !support && systemInfo.platform === "devtools";
     return function () {
         if (needWarning) console.warn('当前小程序版本小于 2.10.0，不支持分片上传，请更新软件。');
